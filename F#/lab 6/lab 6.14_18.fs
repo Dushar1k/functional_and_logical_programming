@@ -8,12 +8,12 @@ let list_input =
         else l_i (list@[input])
     l_i []
 
-let min list =
+let min (H::T) =
     let rec m list min =
         match list with
         | [] -> min
         | H::T -> if H < min then m T H else m T min
-    m list list.Head
+    m T H
 
 let first_in_index list x =
     let rec fin list i =
