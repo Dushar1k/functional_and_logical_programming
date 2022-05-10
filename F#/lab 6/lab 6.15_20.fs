@@ -8,12 +8,12 @@ let list_input =
         else l_i (list@[input])
     l_i []
 
-let find_missed_int list =
+let find_missed_int (H::T) =
     let rec fmi list list1 i =
         match list with
         | [] -> list1
         | H::T -> if H = i then fmi T list1 (i+1) else fmi list (list1@[i]) (i+1)
-    fmi list [] list.Head
+    fmi (H::T) [] H
 
 [<EntryPoint>]
 let main args =
