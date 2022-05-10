@@ -8,10 +8,17 @@ let list_input =
         else l_i (list@[input])
     l_i []
 
+let length list =
+    let rec len list n =
+        match list with
+	| [] -> n
+	| H::T -> len T (n + 1)
+    len list 0
+
 // This function will process the list and create a new one consisting of the sum of the three elements of the original list
 let func list f =
     let rec funct list list2 =
-        if List.length(list) % 3 = 0 then
+        if length list % 3 = 0 then
             match list with
             | a::b::c::T -> funct T (list2@[(f a b c)])
             |[] -> list2
