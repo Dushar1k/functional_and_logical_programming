@@ -129,3 +129,4 @@ fib_down(N,X,1,1):- !.
 fib_down(N,X,2,1):- !.
 fib_down(N,X,I,F):- I1 is I-1, I2 is I-2, fib_down(N,X,I1,F1), fib_down(N,X,I2,F2), F is F1+F2.
 fib_down(N,X):- fib_down(N,X,N,X), !.
+
