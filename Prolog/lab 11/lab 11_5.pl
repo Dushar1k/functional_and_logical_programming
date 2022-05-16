@@ -69,9 +69,9 @@ mother(X,Y):- parent(X,Y), woman(X).
 mother(X):- parent(Y,X), woman(Y), write(Y).
 
 brother(X,Y):- man(X), parent(Z,Y), parent(Z,X), !.
-brothers(X):- parent(Z,X), parent(Z,Y), X \= Y, man(Y), man(Z),  write(Y), write(", "), fail.
+brothers(X):- parent(Z,X), parent(Z,Y), X \= Y, man(Y), man(Z), write(Y), write(", "), fail.
 
-b_s(X,Y):- parent(Z,X), parent(Z,Y), !.
+b_s(X,Y):- parent(Z,X), parent(Z,Y), X \= Y, !.
 b_s(X):- parent(Y,X), man(Y), parent(Y,Z), X \= Z, write(Z), write(", "), fail.
 
 grand_pa(X,Y):- man(X), parent(X,Z), parent(Z,Y), !.
